@@ -1,0 +1,35 @@
+<%-include("partials/header.ejs") %>
+<div class="container">
+    <div class="row g-5">
+        <div class="col-md-8">
+          <h3 class="pb-4 mb-4 fst-italic border-bottom">
+            <b>JH's Blog</b>
+          </h3>
+
+        <% if (locals.id) { %>
+      
+            <h2 class="display-5 link-body-emphasis mb-1"><%= locals.title%></h2>
+            <p class="blog-post-meta"><%=locals.date%> by @<%=locals.user%></a></p>
+
+            <p><%=locals.content %></p>
+            
+      
+        <% } %>
+
+        </div>
+    
+        <div class="col-md-4">
+            <div class="position-sticky" style="top: 20rem;">
+                <form action="" method="get">
+                    <button type="submit" formaction="edit/<%=locals.id %>" class="btn btn-primary" style="width:100px">Edit</button>
+                </form>
+                <br>
+                <form action="" method="get">
+                    <button type="submit" formaction="delete/<%=locals.id %>" class="btn btn-danger" style="width:100px">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%-include("partials/footer.ejs") %>
